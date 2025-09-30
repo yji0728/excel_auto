@@ -1,0 +1,22 @@
+{
+  "name": "데이터_병합_예제",
+  "description": "여러 엑셀 파일의 데이터를 하나로 병합하는 워크플로우",
+  "steps": [
+    {
+      "operation": "merge_files",
+      "params": {
+        "file_paths": [
+          "file1.xlsx",
+          "file2.xlsx",
+          "file3.xlsx"
+        ]
+      }
+    },
+    {
+      "operation": "save_file",
+      "params": {
+        "file_path": "merged_output.xlsx"
+      }
+    }
+  ]
+}
