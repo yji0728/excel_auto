@@ -204,6 +204,10 @@ class WorkflowEngine:
         if not dfs:
             return {'success': False, 'message': 'No data to merge'}
         
+        # Create new file if not already open
+        if self.excel_ops.workbook is None:
+            self.excel_ops.create_new_file()
+        
         merged_df = pd.concat(dfs, ignore_index=True)
         self.excel_ops.from_dataframe(merged_df)
         
