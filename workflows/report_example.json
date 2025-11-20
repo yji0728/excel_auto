@@ -1,0 +1,45 @@
+{
+  "name": "보고서_생성",
+  "description": "데이터 읽기, 계산 및 서식 적용하는 보고서 생성 워크플로우",
+  "steps": [
+    {
+      "operation": "open_file",
+      "params": {
+        "file_path": "data.xlsx"
+      }
+    },
+    {
+      "operation": "sum_column",
+      "params": {
+        "col": 2,
+        "start_row": 2,
+        "end_row": 10
+      }
+    },
+    {
+      "operation": "write_cell",
+      "params": {
+        "row": 11,
+        "col": 2,
+        "value": "=SUM(B2:B10)"
+      }
+    },
+    {
+      "operation": "format_cell",
+      "params": {
+        "row": 1,
+        "col": 2,
+        "bold": true,
+        "font_size": 12,
+        "bg_color": "4472C4",
+        "align": "center"
+      }
+    },
+    {
+      "operation": "save_file",
+      "params": {
+        "file_path": "report.xlsx"
+      }
+    }
+  ]
+}
